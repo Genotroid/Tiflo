@@ -41,8 +41,12 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Логин', 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label' => 'Примеры работ', 'url' => ['/examples/index']];
+        $menuItems[] = ['label' => 'Партнеры', 'url' => ['/partners/index']];
+        $menuItems[] = ['label' => 'Что говорят СМИ', 'url' => ['/news/index']];
+        $menuItems[] = ['label' => 'Услуги', 'url' => ['/services/index']];
+        $menuItems[] = ['label' => 'Отзывы', 'url' => ['/reviews/index']];
         $menuItems[] = ['label' => 'Настройки', 'url' => ['/settings/index']];
-        $menuItems[] = ['label' => 'Страницы', 'url' => ['/page/index']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
@@ -58,6 +62,7 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
+
 
     <div class="container">
         <?= Breadcrumbs::widget([
